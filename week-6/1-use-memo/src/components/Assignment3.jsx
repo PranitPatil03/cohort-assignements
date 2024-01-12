@@ -11,9 +11,20 @@ const Assignment3 = () => {
         // Add more items as needed
     ]);
 
-    // Your code starts here
-    const totalValue = 0;
-    // Your code ends here
+  const calTotalAmount=(items)=>{
+    
+    let totalVal=0;
+
+    items.map((item)=>{
+      console.log(item)
+      totalVal+=item.value
+    })
+    console.log(totalVal)
+    return totalVal
+  }
+
+    const totalValue = useMemo(() => calTotalAmount(items), [items])
+
     return (
         <div>
             <ul>
